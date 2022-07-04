@@ -37,12 +37,13 @@ file(GLOB SOURCES
 )
 
 if (LIBSGM_FOUND AND CUDA_FOUND)
-	message(INFO "Found LibSGM")
-	message(INFO "Found CUDA")
+	message(STATUS "Found LibSGM")
+	message(STATUS "Found CUDA")
   cuda_add_executable(${PROJECT_NAME} ${SOURCES})
 else()
-  message(INFO "Could NOT find LibSGM")
-	message(INFO "Could NOT find CUDA")
+  message(STATUS "Could NOT find LibSGM")
+	message(STATUS "Could NOT find CUDA")
+	message(STATUS "Compiling with CPU stereo only")
   add_executable(${PROJECT_NAME} ${SOURCES})
 endif()
 
