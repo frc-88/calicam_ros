@@ -1,0 +1,88 @@
+%YAML:1.0
+cam_model: stereo
+sn: "21-181220-0172"
+Kl: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [ 9.2424418695984514e+02, -3.5092862460756182e-04,
+       6.7683367479569836e+02, 0., 9.2433869885790068e+02,
+       4.7370449390857095e+02, 0., 0., 1. ]
+Dl: !!opencv-matrix
+   rows: 1
+   cols: 4
+   dt: d
+   data: [ -3.7989201936629241e-01, 4.0615209957940920e-02,
+       -3.6335324957373333e-04, -8.1457998819074566e-04 ]
+xil: !!opencv-matrix
+   rows: 1
+   cols: 1
+   dt: d
+   data: [ 1.3704728661692687e+00 ]
+Rl: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [ 9.9998690749012487e-01, -4.4328342203263593e-04,
+       -5.0978768270983944e-03, 4.4328918224685924e-04,
+       9.9999990174734565e-01, 0., 5.0978763262184649e-03,
+       -2.2598336498796606e-06, 9.9998700574150257e-01 ]
+Kr: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [ 9.2629060188556332e+02, -8.9990445130223182e-02,
+       6.7759988327817996e+02, 0., 9.2619808843641772e+02,
+       4.6643728184662893e+02, 0., 0., 1. ]
+Dr: !!opencv-matrix
+   rows: 1
+   cols: 4
+   dt: d
+   data: [ -3.7838265827726436e-01, 3.7433514096310745e-02,
+       -3.1465232460493940e-04, -8.3310547951285412e-04 ]
+xir: !!opencv-matrix
+   rows: 1
+   cols: 1
+   dt: d
+   data: [ 1.3728931843042178e+00 ]
+Rr: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [ 9.9999933347719439e-01, 1.1526246787992929e-03,
+       -6.7093344247141917e-05, -1.1527755022327311e-03,
+       9.9999670640843952e-01, -2.2930941791957657e-03,
+       6.4450046327328876e-05, 2.2931699943598348e-03,
+       9.9999736860532218e-01 ]
+T: !!opencv-matrix
+   rows: 3
+   cols: 1
+   dt: d
+   data: [ -1.2030145531760300e-01, -1.3725447694284986e-04,
+       7.9479311507758088e-06 ]
+RMSE: 1.8842322064313530e-01
+# cap_size: [ 2560, 960 ]
+cap_size: [ 1280, 480 ]
+# fps: 30
+fps: 20
+vfov: 100
+max_depth: 10.0
+
+num_disparities: 256
+disparity_window: 7
+
+distance_pointer_radius: 5
+
+enable_depth: 1
+enable_undistort: 1
+use_cuda: 1
+
+# CPU stereo parameters
+pre_filter_cap: 31
+min_disparity: 0
+texture_threshold: 10
+uniqueness_ratio: 15
+speckle_window_size: 100
+speckle_range: 32
+disp12_max_diff: 1
+
