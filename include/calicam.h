@@ -110,8 +110,8 @@ public:
 
     StereoCalicam(int capture_num, std::string param_path);
     void begin();
-    double get_width()  { return image_width; }
-    double get_height()  { return image_height; }
+    int get_width()  { return image_width; }
+    int get_height()  { return image_height; }
     double get_pipeline_fps()  { return pipeline_fps; }
     double get_fps()  { return fps; }
     double get_max_depth()  { return max_depth; }
@@ -141,6 +141,7 @@ public:
     std::vector<double> get_right_camera_matrix();
     std::vector<double> get_right_rectification();
     std::vector<double> get_right_projection();
+    std::vector<double> get_translation_left_to_right();
 
     void process();
 

@@ -152,6 +152,15 @@ std::vector<double> StereoCalicam::get_right_projection()
     return vec;
 }
 
+std::vector<double> StereoCalicam::get_translation_left_to_right()
+{
+    std::vector<double> vec;
+    vec.push_back(Translation.at<double>(0, 0));
+    vec.push_back(Translation.at<double>(1, 0));
+    vec.push_back(Translation.at<double>(2, 0));
+    return vec;
+}
+
 void StereoCalicam::load_parameters(std::string file_name)
 {
     cv::FileStorage fs(file_name, cv::FileStorage::READ);

@@ -22,11 +22,16 @@ def generate_launch_description():
         name='camera_prefix',
         default_value="calicam"
     )
+    debug_show = DeclareLaunchArgument(
+        name='debug_show',
+        default_value="false"
+    )
 
     return LaunchDescription([
         camera_config_path_arg,
         camera_capture_num_arg,
         camera_prefix_arg,
+        debug_show,
         Node(
             package="calicam_ros",
             # namespace="",
@@ -36,6 +41,10 @@ def generate_launch_description():
                 {"param_path": LaunchConfiguration('camera_config_path')},
                 {"capture_num": LaunchConfiguration('camera_capture_num')},
                 {"camera_prefix": LaunchConfiguration('camera_prefix')},
-            ]
+                {"debug_show": LaunchConfiguration('debug_show')},
+            ],
+            output='screen',
+            emulate_tty=True,
+            arguments=[('__log_level:=debug')]
         )
     ])
